@@ -1,0 +1,7 @@
+New Products=Nouveaux Produits
+All Products=Tous les Produits
+Products=Produits
+items=articles
+to=&agrave;
+of=de
+total=au total

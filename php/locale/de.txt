@@ -1,0 +1,15 @@
+New Products=Neue Produkte
+All Products=Alle Produkte
+Products=Produkte
+items=artikel
+to=bis
+of=von
+total=gesamt
+Buy Now=Jetzt kaufen
+Contact=Kontakt
+About=&Uuml;ber Uns
+Facebook Magento Store Tab=Facebook Magento Store Tab - DE
+A Magento store front application for Facebook.=Ein Magento Shop f&uuml;r Facebook.
+Please like this page to view the Shop!=Bitte klicken Sie Like, um den Shop zu sehen!
+An error has been detected=ein Fehler ist erkannt worden.
+Contact Form=Kontaktformular

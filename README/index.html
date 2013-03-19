@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head lang="en">
+  
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>My Documentation</title>
+
+  
+<!-- Framework CSS -->
+  
+  <link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+
+  
+  <link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+
+<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  
+  <link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+
+  
+  <style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head><body>
+<div class="container">
+<h3 class="center alt"><a class="mozTocH3" name="mozTocId648043"></a>Magento
+Facebook Shop Tab Application Documentation by PAJ v1.0</h3>
+<hr>
+<h1 class="center">Magento Facebook Shop Tab Application</h1>
+<div class="borderTop">
+<div class="span-6 colborder info prepend-1">
+<p class="prepend-top"> <strong> Created: 20/11/2012<br>
+By: PAJ<br>
+Email: </strong><a href="mailto:paj@p-a-j.co.uk">paj@p-a-j.co.uk</a> </p>
+</div>
+<!-- end div .span-6 -->
+<div class="span-12 last">
+<p class="prepend-top append-0">If
+you have any questions that are beyond the scope of this help file,
+please feel free to contact me via email.<br>
+</p>
+</div>
+</div>
+<!-- end div .borderTop -->
+<hr>
+<h2 id="toc" class="alt">Table of Contents</h2>
+<ol class="alpha">
+  <ol id="mozToc"><!--mozToc h3 1--><li><a href="#mozTocId39007">Introduction</a></li><li><a href="#mozTocId980807">Getting
+Started
+</a></li><li><a href="#mozTocId980807">Installing
+as a Facebook Application or Tab
+</a></li><li><a href="#mozTocId980807">Configuring
+the Application
+</a></li><li><a href="#mozTocId625926">Language Support</a>
+</li></ol></ol>
+<hr>
+<h3><a class="mozTocH3" name="mozTocId39007"></a><strong>Introduction</strong></h3>
+<div class="tocLink">- <a href="#toc">top</a></div>
+<p>Magento Facebook Shop Tab is an object oriented PHP script that
+integrates with a Magento eCommerce store to render product HTML
+designed to be displayed within a Facebook page Tab application.</p>
+<p> The application can display various product views with a simple
+product description popup and link to your actual Magento web store for
+purchases.<br>
+<br>
+The application currently only supports normal desktop browsers, IE9,
+Firefox, Safari, Opera, Chrome.</p>
+<br>
+<hr>
+<h3><a class="mozTocH3" name="mozTocId980807"></a><strong>Getting
+Started<br>
+</strong></h3>
+<div class="tocLink">- <a href="index.html#toc">top</a></div>
+<p>To quickly install and test the application follow these steps</p>
+<br>
+<p>1. Create a new folder in the same location as your Magento store
+root folder. i.e. if Magento is installed in /home/www/magento create a
+new folder called <span style="font-weight: bold;">facebook</span> in <span style="font-style: italic;">/home/www/magento</span></p>
+<br>
+<p>2 Copy the application zip package to /home/www/magento/facebook and
+unzip it. Another folder called magentotab will be created, and the
+source files extracted into it.</p>
+<br>
+<p><img style="width: 535px; height: 88px;" src="assets//screenshot_01.jpg" alt=""></p>
+<p>3. Using your favourite text editor edit the configuration files <span style="font-weight: bold;">userConfig.ini</span> and <span style="font-weight: bold;">applicationConfig.php</span> in
+YOURPATH/facebook/magentotab/config</p>
+<span style="font-weight: bold;">userConfig.ini</span><br>
+Edit the path to your Magento installation<br>
+<p><img src="file:///Users/PAJ/Library/Application%20Support/SnapNDrag/screenshot_03.jpg" alt=""></p>
+<p><span style="font-weight: bold;">applicationConfig.php</span><br>
+Edit the path to your userConfig.ini configuration file.<br>
+</p>
+<p><img style="width: 645px; height: 93px;" src="assets//screenshot_04.jpg" alt=""></p>
+<p>4. Test the application by browsing to the following url -
+http://www.MYSTORE.com/facebook/magentotab Where www.MYSTORE.com is the
+url of your Magento store. You should see the default view of products
+from your Magento store displayed in your browser.<br>
+</p>
+<p style="text-align: center;"><img style="width: 467px; height: 323px;" src="assets//screenshot_05.jpg" alt=""></p>
+<p>If you see an error message, take a note of the error details and
+check your configuration again.<br>
+</p>
+<p>This application requires a configured Facebook Account, Facebook
+Page and a configured Facebook Application. A good knowledge of your
+Magento installation and Operating System is assumed as well as some
+experience with Facebook applications and PHP.<br>
+<br>
+Note that the web server hosting the application should support
+HTTPS/SSL connections, the application should be accessible via both
+http and https connections as Facebook users who have enabled https in
+their security settings will automatically attempt to browse to the
+application using https. If this is not supported on your web server
+then the connection will fail and the application will not load
+correctly.</p>
+<br>
+<hr>
+<h3><a class="mozTocH3" name="mozTocId980807"></a><strong>Installing
+as a Facebook Application or Tab<br>
+</strong></h3>
+<div class="tocLink">- <a href="index.html#toc">top</a></div>
+<p>This application is designed to be run as a Facebook Tab app. To
+install the application into your Facebook page follow these steps.</p>
+<br>
+<p>1. Login to Facebook with an account that has administrative rights
+over your Facebook page.<br>
+2. Browse to <a href="http://developers.facebook.com/" target="_blank">http://developers.facebook.com/</a>
+and select Apps from the menu.<br>
+3. Click the Create New App button. complete the Create New App form
+and click Continue. Follow the security check prompts.<br>
+</p>
+
+<div style="text-align: center;"><img style="width: 608px; height: 183px;" src="assets//screenshot_06.jpg" alt=""><br>
+<br>
+<div style="text-align: left;">4. Complete the information required for
+the Facebook Page Tab and optionally if required a normal Facebook app,
+as shown below.<br>
+<br>
+<div style="text-align: center;"><img style="width: 692px; height: 702px;" src="assets//screenshot_07.jpg" alt=""><br>
+</div>
+</div>
+</div>
+<hr>5. Save your new Facebook application and take a note of your
+Facebook Application ID and Application secret.<br>
+6. Edit userConfig.ini again and complete the details of your Facebook
+application.<br>
+<br>
+Add your Facebook app credentials, ID and Secret. You can add the
+Facebook URL later.<br>
+<p><img src="file:///Users/PAJ/Library/Application%20Support/SnapNDrag/screenshot_08.jpg" alt=""></p>
+<br>
+<p>7. Save the file and browse to the following URL
+http://www.MYSTORE.com/facebook/magentotab/?fbtab=true You will see a
+link appear "Click here to setup the facebook tab application." Click
+on the link to install the application into a Facebook Page tab. Choose
+the&nbsp; Facebook page that the&nbsp; tab should appear on and click
+Add Page Tab.<br>
+</p>
+<p><img style="width: 564px; height: 229px;" src="assets//screenshot_09.jpg" alt=""></p>
+<p>8. Goto your Facebook page and confirm that you now have a new
+Magento Store Tab. Click the Tab to view your Magento store.</p>
+<br>
+<p><img style="width: 415px; height: 123px;" src="assets//screenshot_10.jpg" alt=""></p>
+<p><br>
+</p>
+<hr>
+<h3 id="heading2"><a class="mozTocH3" name="mozTocId980807"></a><strong>Configuring
+the Application</strong><br>
+</h3>
+<div class="tocLink">- <a href="index.html#toc">top</a></div>
+<br>
+<br>
+<p>There are other confiuration settings in userConfig.ini that you
+might want to change.<br>
+<br>
+To display a menu on the product page set the showMenu setting to true.
+Depending on traffic and your hosting etc. the application may run
+faster when the menu is disabled.<br>
+<br>
+To exclude categories from being shown in the product menu, configure
+the excludedProductCategories setting with a list of category id’s
+separated by a comma, e.g.<br>
+<br>
+excludedProductCategories='4,5,16,17,18,19,22,23,25,27,28,29,30,31,32,33,34,35,37';&nbsp;&nbsp;&nbsp;
+<br>
+For google UTM tagging configure the googleUTMTag setting with a valid
+Google UTM URI.<br>
+<br>
+The bannerImage setting holds the name of the graphic file used as the
+banner at the top of the Facebook Tab page.<br>
+<br>
+Set the productLimit setting to define the number of products that will
+appear per page. This should be divisible by 9.<br>
+<br>
+Set the defaultCollectionType setting. This defines the default product
+view that will be shown. Options are<br>
+<br>
+newfromdate - Products set with the NEW FROM attribute - i.e. New
+Products.<br>
+allproducts - All Products<br>
+categoryproducts - Products from a category.<br>
+<br>
+Determine which product description will be shown for the product<br>
+useShortDescription=true - Use short description<br>
+useLongDescription=true - Use long description<br>
+<br>
+Configure language options<br>
+<br>
+&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp; storesConfigured='1,2,3';<br>
+&nbsp;&nbsp;&nbsp; storesLanguage='de,en,fr';<br>
+&nbsp;&nbsp;&nbsp; storeDefaultLanguage='en';<br>
+<br>
+In this example there are three stores configured with the id’s 1, 2
+and 3. The store languages for store 1,2,3 are de, en, fr - German,
+English, French. And the default language is ‘en’ - English.<br>
+<br>
+The showContact setting enable a Contact form on the menu when set to
+true.<br>
+<br>
+The allowStandAlone setting lets the application run in a standalone
+browser when set to true. When set to false the application will
+redirect to the Facebook URL of the app. Set to true for debugging the
+app standalone outside of Facebook.<br>
+<br>
+Set the pageLikeRequired setting to true if visitors must first Like
+the Facebook page the tab is running in before they can access the
+application.<br>
+<br>
+Set the URIToApp value to the URI path of the app on your server.<br>
+<br>
+Save the configuration file. You can rename this file, or store it in
+another location. This will preserver your configuration settings
+during upgrades to the application.<br>
+<br>
+Ensure that the path in magentotab/applicationConfig.php -
+userConfigurationFile constant matches the path to your configuration
+file.</p>
+<br>
+<hr>
+<h3 id="heading2"><a class="mozTocH3" name="mozTocId625926"></a><strong>Language Support</strong><br>
+</h3>
+
+<div class="tocLink">- <a href="index.html#toc">top</a></div>
+
+<br>
+
+<br>
+
+<p>There are other confiuration settings in userConfig.ini that you
+might want to change.</p>
+
+To translate some of the interface text used in the application to your
+language, simply create a new language file in the php/locale folder
+named XX.txt where XX is your two letter language code. Use an existing
+language file as a template and add your translations to the file in
+the format<br>
+<br>
+Text=TranslatedText.<br>
+<br>
+Make sure your language settings are configured correctly in the
+application. You can force the application to the language you want
+using the storeid variable in the url<br>
+<br>
+i.e. http://www.YOURSHOP/facebook/magentotab/?storeid=2<br>
+<br>
+Will force the application to the language configured for store id 2.<br>
+<br>
+<br>
+<hr><strong></strong><br>
+<br>
+<p>Please do not hesitate to contact me for further help and assistance.<br>
+</p>
+<p class="append-bottom alt large"><strong>PAJ</strong></p>
+<p><a href="#toc">Go To Table of Contents</a></p>
+<hr class="space"> </div>
+
+<!-- end div .container -->
+</body></html>
