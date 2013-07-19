@@ -29,10 +29,10 @@ class Magento
 	protected $__config;
 	protected $__;
 	
-	public function __construct() {
+	public function __construct($_storeID) {
 		
 			$this->loadConfig();
-			$this->loadMagento();
+			$this->loadMagento($_storeID);
 
 	}
 	
@@ -45,12 +45,14 @@ class Magento
 
 
 	// connect to Magento
-	private function loadMagento()
+	private function loadMagento($_storeID)
 	{
 		require_once $this->__config->get('PATH_TO_MAGENTO_INSTALLATION'). 'app/Mage.php';
 		umask(0);
-		Mage::app()->loadArea(Mage_Core_Model_App_Area::AREA_FRONTEND);
+		Mage::app()->setCurrentStore($_storeID)->loadArea(Mage_Core_Model_App_Area::AREA_FRONTEND);
 		$baseUrlMedia = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+		$storeURL = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB);
+		
 		$this->set('baseurlmedia',$baseUrlMedia);
 	}
 	

@@ -129,7 +129,7 @@ class Application
 		$this->__config= new config();
 		
 		
-		$_version='BETA v1.0.0-12.11.2012';
+		$_version='BETA v1.1.0-19.07.2013';
 		$_versionNumber=explode('-',$_version);
 		$_versionNumber=$_versionNumber[0];
 		
@@ -222,9 +222,11 @@ class Application
 		 */
 		private function getProductCollection($_collectionType)
 		{
-			// -- Load Magento --
-			$_obj=new MagentoCollection();
 			$_storeID=$this->get('storeid');
+			
+			// -- Load Magento --
+			$_obj=new MagentoCollection($_storeID);
+			
 			$_collectionPage=$this->get('collectionpage');
 			$_categoryID=$this->get('categoryid');
 			$_collectionLimit=$this->get('productlimit');
@@ -303,10 +305,10 @@ class Application
 				$_url=explode('?',$product->getProductUrl());
 				$_url=$_url[0];
 				$_id=$product->getId();
-				$_imageURL=$this->get('imagebaseurl'). $product->getImage();
+				$_imageURL=$this->get('imagebaseurl'). $product->getSmall_image();
 				$_productIsSaleable= $product->isSaleable();
 								  
-				if ($_productIsSaleable) {
+				//if ($_productIsSaleable) {
 	
 				  		$_filteredProducts[$_id] = array 
 						  (
@@ -320,8 +322,7 @@ class Application
 						  );
 						  
 				  	$_newProductCount++;
-				}
-	
+				//}
 			}
 			
 			// -- set class variables
@@ -344,7 +345,7 @@ class Application
 		$_productCount=0;
 		$_productLimit=$this->get('productlimit');
 		$_collection=$this->get('filteredcollection');
-		$_collectionItems = count($_collection);
+		$_collectionItems = count(array_keys($_collection));
 		$_useLongDescription=$this->get('uselongdescription');
 		$_useShortDescription=$this->get('useshortdescription');
 		$_collectionPage=$this->get('collectionpage');
@@ -352,14 +353,16 @@ class Application
 		
 		$_categoryIDSelected=$this->get('categoryid');
 		$_selectedCollection=$this->get('selectedcollectionname');
-
+			
 		$_productHTML='
 		<!-- START Product Container -->
 		<div id="productContainer">';
-			    
+
+		    
 		// iterate collection
 		foreach ($_collection as $id=>$product) {
 		
+
 			$x++;
 			$_productCount++;
 			$_id=$id;

@@ -28,9 +28,9 @@ class MagentoCollection extends Magento {
 
 
 
-	public function __construct() {
+	public function __construct($_storeID=1) {
 
-		parent::__construct();
+		parent::__construct($_storeID);
 		
 		$this->getCategories();
 
@@ -83,7 +83,7 @@ class MagentoCollection extends Magento {
 					 ->addAttributeToSelect('description')
 					 ->addAttributeToSelect('short_description')
 					 ->addAttributeToSelect('url')
-					 ->addAttributeToSelect('image')
+					 ->addAttributeToSelect('small_image')
 					 ->addAttributeToSelect('price')             
                      ->addAttributeToFilter('news_from_date', array('date' => true, 'to' => $todayDate))
                      ->addAttributeToFilter('news_to_date', array('or'=> array(
@@ -93,7 +93,9 @@ class MagentoCollection extends Magento {
                      ->addAttributeToSort('news_from_date', 'desc')
                      ->addAttributeToSort('created_at', 'desc')
                      ->setPage($_page,$_count);   
-
+ 
+    Mage::getSingleton('cataloginventory/stock')
+    		->addInStockFilterToCollection($products);  
         
             $this->set('collection',$collection); 
 	}
@@ -112,11 +114,14 @@ class MagentoCollection extends Magento {
 			 ->addAttributeToSelect('description')
 			 ->addAttributeToSelect('short_description')
 			 ->addAttributeToSelect('url')
-			 ->addAttributeToSelect('image')
+			 ->addAttributeToSelect('small_image')
 			 ->addAttributeToSelect('price')
 		    //->setOrder('price', 'ASC');
 		    ->addAttributeToSort('entity_id', 'DESC')
             ->setPage($_page,$_count);
+            
+    Mage::getSingleton('cataloginventory/stock')
+    		->addInStockFilterToCollection($products);       
      
      $this->set('collection',$products); 
 	}
@@ -151,6 +156,9 @@ class MagentoCollection extends Magento {
             ->addVisibleFilterToCollection($products);
     Mage::getSingleton('catalog/product_visibility')
             ->addVisibleInCatalogFilterToCollection($products);
+            
+    Mage::getSingleton('cataloginventory/stock')
+    		->addInStockFilterToCollection($products);  
      
      $this->set('collection',$products); 
 	}
@@ -170,12 +178,14 @@ class MagentoCollection extends Magento {
 						 ->addAttributeToSelect('description')
 						 ->addAttributeToSelect('short_description')
 						 ->addAttributeToSelect('url')
-						 ->addAttributeToSelect('image')
+						 ->addAttributeToSelect('small_image')
 						 ->addAttributeToSelect('price')
                          ->addAttributeToSort('entity_id', 'DESC')
                          ->setPage($_page,$_count);
 
-		
+		Mage::getSingleton('cataloginventory/stock')->addInStockFilterToCollection($collection);
+
+
 		$this->set('collection',$collection); 
 
 	}
@@ -202,6 +212,8 @@ class MagentoCollection extends Magento {
 	            ->addVisibleFilterToCollection($products);
 	    Mage::getSingleton('catalog/product_visibility')
 	            ->addVisibleInCatalogFilterToCollection($products);
+	            
+	    Mage::getSingleton('cataloginventory/stock')->addInStockFilterToCollection($products);
 	     
 	    $this->set('collection',$collection); 
 	}
